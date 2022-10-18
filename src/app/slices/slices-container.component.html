@@ -1,8 +1,24 @@
-<mat-grid-list cols="4" rowHeight="2:1">
-  <mat-grid-tile>
-    <mat-card>this is a card</mat-card>
-  </mat-grid-tile>
-  <mat-grid-tile>2</mat-grid-tile>
-  <mat-grid-tile>3</mat-grid-tile>
-  <mat-grid-tile>4</mat-grid-tile>
-</mat-grid-list>
+<section>
+  <article class="add-slice">
+    <div class="row">
+      <button mat-raised-button color="primary" (click)="addSlice()">Add Slice</button>
+    </div>
+  </article>
+  <ng-container *ngFor="let slice of slices">
+    <mat-card class="slice-card">
+      <mat-card-header>
+        <mat-card-title>{{ slice.name }}</mat-card-title>
+        <mat-card-subtitle *ngIf="slice.version">{{
+          slice.version
+        }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>{{ slice.description }}</mat-card-content>
+      <mat-card-actions>
+        <a [routerLink]="[slice.id]" mat-stroked-button>Details</a>
+        <button mat-stroked-button color="accent" (click)="deleteSlice(slice)">
+          Delete
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </ng-container>
+</section>

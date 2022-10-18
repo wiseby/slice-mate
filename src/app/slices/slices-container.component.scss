@@ -1,0 +1,32 @@
+@import 'mixins';
+
+section {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 2%;
+  row-gap: 2%;
+  padding: 1rem;
+
+  @include tablet-screen {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include mobile-screen {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.add-slice {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  border: 4px dashed red;
+  border-radius: 4px;
+  height: 96%;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

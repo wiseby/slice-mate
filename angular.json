@@ -20,6 +20,11 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/app/shared/styles"
+              ]
+            },
             "outputPath": "dist/slice-mate",
             "index": "src/index.html",
             "main": "src/main.ts",
